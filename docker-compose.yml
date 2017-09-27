@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  keeping-bonsai-web:
+    build: ./keeping-bonsai-web
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./keeping-bonsai-web:/usr/src/app
+    container_name: compose-keeping-bonsai-web
+
+  keeping-bonsai-api:
+    build: ./keeping-bonsai-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./keeping-bonsai-api:/usr/src/app
+    container_name: compose-keeping-bonsai-api
