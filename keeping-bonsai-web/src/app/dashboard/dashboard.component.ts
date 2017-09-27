@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   constructor(private bonsaiService: BonsaiService) { }
 
   ngOnInit() {
-    this.bonsais = this.bonsaiService.getBonsais();
+    this.bonsaiService.getBonsais().then(bonsais => this.bonsais = bonsais);
   }
 
 }

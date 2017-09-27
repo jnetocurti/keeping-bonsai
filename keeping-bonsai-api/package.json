@@ -1,0 +1,29 @@
+{
+  "name": "keeping-bonsai-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node"
+  },
+  "keywords": [
+    "API",
+    "node",
+    "express",
+    "bonsai"
+  ],
+  "author": "José Cataldo Curti Neto <jnetocurti@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cors": "^2.8.4",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "express": "^4.15.5"
+  }
+}

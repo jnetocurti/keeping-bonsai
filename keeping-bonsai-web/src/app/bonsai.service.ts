@@ -1,32 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
 
 import { Bonsai } from './bonsai';
 
 @Injectable()
 export class BonsaiService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getBonsais(): Bonsai[] {
-    return [{
-      common_name: "Jaboticabeira",
-      scientific_name: "Plinia cauliflora",
-      origin: "Semente",
-      origin_date: "String",
-      planting_date: "String"
-    }, {
-      common_name: "Ipê-amarelo",
-      scientific_name: "Handroanthus albus",
-      origin: "Semente",
-      origin_date: "String",
-      planting_date: "String"
-    }, {
-      common_name: "Ipê-roxo",
-      scientific_name: "Handroanthus impetiginosus",
-      origin: "Semente",
-      origin_date: "String",
-      planting_date: "String"
-    }];
+  getBonsais(): Promise<Bonsai[]> {
+    return this.http.get('http://localhost:3000/bonsais')
+      .toPromise()
+      .then(res => res.json() as Bonsai[])
+      .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
   }
 
 }
