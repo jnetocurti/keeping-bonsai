@@ -1,19 +1,15 @@
 import express from 'express';
 import consign from 'consign';
-import bodyParser from 'body-parser';
-import cors from 'cors';
 
 const app = express();
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 consign()
-  .include('./app/models')
+  .include('./config/initializers/middleware.js')
+  .then('./app/models')
   .then('./app/routes')
+  .then('./config/initializers/server.js')
   .into(app);
-
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.listen(3000);
 
 module.exports = app;
