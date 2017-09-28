@@ -11,6 +11,7 @@
   "watch": [
     "app/*",
     "config/*",
+    "lib/*",
     "index.js"
   ],
   "env": {
