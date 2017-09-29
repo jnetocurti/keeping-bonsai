@@ -4,4 +4,7 @@ module.exports = {
       verbose: true,
     },
   },
+  mongo: {
+    uri: 'mongodb://keeping-bonsai-database/keeping-bonsai-dev',
+  },
 };

@@ -3,6 +3,11 @@ module.exports = {
     options: {
     },
   },
+  mongo: {
+    options: {
+      useMongoClient: true,
+    },
+  },
   winston: {
     options: {
       exitOnError: true,

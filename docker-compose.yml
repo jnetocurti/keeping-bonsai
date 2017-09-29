@@ -7,7 +7,10 @@ services:
       - "4200:4200"
     volumes:
       - ./keeping-bonsai-web:/usr/src/app
-    container_name: compose-keeping-bonsai-web
+    container_name:
+      compose-keeping-bonsai-web
+    depends_on:
+      - "keeping-bonsai-api"
 
   keeping-bonsai-api:
     build: ./keeping-bonsai-api
@@ -15,4 +18,14 @@ services:
       - "3000:3000"
     volumes:
       - ./keeping-bonsai-api:/usr/src/app
-    container_name: compose-keeping-bonsai-api
+    container_name:
+      compose-keeping-bonsai-api
+    depends_on:
+      - "keeping-bonsai-database"
+
+  keeping-bonsai-database:
+    image: mongo:3.0
+    ports:
+      - "27017:27017"
+    container_name:
+      compose-keeping-bonsai-database
