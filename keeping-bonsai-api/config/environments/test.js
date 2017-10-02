@@ -4,4 +4,7 @@ module.exports = {
       verbose: false,
     },
   },
+  mongo: {
+    uri: 'mongodb://localhost/keeping-bonsai-test',
+  },
 };

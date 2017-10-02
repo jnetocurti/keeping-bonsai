@@ -2,6 +2,11 @@
   "extends": "airbnb-base",
   "parser": "babel-eslint",
   "rules": {
-    "strict": 0
+    "strict": 0,
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": true
+      }
+    ]
   }
 }
