@@ -10,4 +10,4 @@
 
 ### Developing
 
-Run `docker-compose up` to start the thre applications (client, server and database). You can visit http://localhost:4200 to see the application running.
+Run `docker-compose up` to start the three applications (client, server and database). You can visit http://localhost:4200 to see the application running.
